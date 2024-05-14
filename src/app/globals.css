@@ -14,10 +14,10 @@ body {
 
 @layer components {
   .top-header-link {
-    @apply px-2 py-2 hover:border-white border-[1px] border-transparent rounded-sm;
+    @apply md:px-2 md:py-2 md:hover:border-white border-[1px] border-transparent rounded-sm;
   }
 
   .bottom-header-link {
-    @apply p-1 border-transparent border-[1px] hover:border-white rounded-sm cursor-pointer;
+    @apply px-2 py-2.5 border-transparent border-[1px] md:hover:border-white rounded-sm cursor-pointer;
   }
 }
