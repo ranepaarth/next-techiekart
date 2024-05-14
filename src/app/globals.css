@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body {
   scrollbar-gutter: stable both-edges;
 }
@@ -10,5 +9,15 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer components {
+  .top-header-link {
+    @apply px-2 py-2 hover:border-white border-[1px] border-transparent rounded-sm;
+  }
+
+  .bottom-header-link {
+    @apply p-1 border-transparent border-[1px] hover:border-white rounded-sm cursor-pointer;
   }
 }
