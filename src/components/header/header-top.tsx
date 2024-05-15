@@ -40,10 +40,10 @@ const TopHeader = ({ showOverlay }: HeaderProp) => {
           <p className="font-semibold sm:text-sm">& Orders</p>
         </div>
         <div className="relative cursor-pointer top-header-link">
-          <span className="absolute -right-1 md:top-2 md:right-1  font-bold bg-amber-500 text-xs w-5 aspect-square flex items-center justify-center rounded-full text-slate-900">
+          <span className="absolute -right-1 md:top-2 md:right-1 font-bold bg-amber-500 text-xs px-1 flex items-center justify-center aspect-square rounded-full text-slate-900">
             5
           </span>
-          <PiShoppingCartSimple strokeWidth={2.2} className="text-[2.5rem]" />
+          <PiShoppingCartSimple strokeWidth={2.2} className="text-[2rem]" />
         </div>
       </div>
     </div>
