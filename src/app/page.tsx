@@ -2,13 +2,13 @@
 
 import BannerCarousel from "@/components/banner/banner-carousel";
 import Header from "@/components/header/header";
+import ProductsFeed from "@/components/products-feed/products-feed";
 import React, { useEffect, useState } from "react";
 
 const Home = () => {
   const [showOverlay, setShowOverlay] = useState(false);
 
   const handleShowOverLay = () => {
-    console.log("scroll");
     setShowOverlay((prev) => !prev);
   };
 
@@ -29,8 +29,9 @@ const Home = () => {
           onClick={handleShowOverLay}
         />
       )}
-      <main className="max-w-screen-2xl mx-auto">
+      <main className="max-w-screen-xl mx-auto">
         <BannerCarousel />
+        <ProductsFeed />
       </main>
     </div>
   );
