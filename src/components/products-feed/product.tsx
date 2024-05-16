@@ -3,7 +3,7 @@
 import ProductStars from "@/components/products-feed/product-stars";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 type ProductProps = {
   product: Product;
@@ -16,10 +16,12 @@ const Product = ({ product }: ProductProps) => {
 
   const [percentage] = useState(Math.round(Math.random() * 99));
 
-  const [afterDiscPrice] = useState(Math.round(price * 25));
+  const [afterDiscPrice, setAfterDiscPrice] = useState<string | number>(
+    Math.round(price * 25)
+  );
 
-  const [beforeDiscPrice] = useState(
-    Math.round((afterDiscPrice * 100) / (100 - percentage))
+  const [beforeDiscPrice, setBeforeDisPrice] = useState<string | number>(
+    Math.round((Number(afterDiscPrice) * 100) / (100 - percentage))
   );
 
   const today = new Date();
@@ -28,6 +30,24 @@ const Product = ({ product }: ProductProps) => {
       dateStyle: "short",
     }).format(new Date(today).setDate(today.getDate() + 1))
   );
+
+  useEffect(() => {
+    setAfterDiscPrice(
+      new Intl.NumberFormat("en-IN", {
+        style: "currency",
+        currency: "INR",
+        maximumFractionDigits: 0,
+      }).format(afterDiscPrice as number)
+    );
+
+    setBeforeDisPrice(
+      new Intl.NumberFormat("en-IN", {
+        style: "currency",
+        currency: "INR",
+        maximumFractionDigits: 0,
+      }).format(beforeDiscPrice as number)
+    );
+  }, []);
 
   return (
     <motion.article
