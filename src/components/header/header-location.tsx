@@ -13,7 +13,7 @@ const HeaderLocation = () => {
   useEffect(() => {
     const fetchApiData = async () => {
       const res = await fetch(
-        `https://api.geoapify.com/v1/ipinfo?&apiKey=${process.env.GEO_APIFY_KEY}`
+        `https://api.geoapify.com/v1/ipinfo?&apiKey=${process.env.NEXT_PUBLIC_GEO_APIFY_KEY}`
       );
       const data = await res.json();
       if (res.ok) {
