@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import React from "react";
@@ -20,7 +20,7 @@ const banners = [
 const BannerCarousel = () => {
   return (
     <div className="relative">
-      <div className="h-32 absolute bottom-0 bg-gradient-to-t from-neutral-100 z-20 w-full" />
+      <div className="h-32 absolute -bottom-1 bg-gradient-to-t from-neutral-100 z-20 w-full" />
       <Carousel
         autoPlay
         infiniteLoop
@@ -38,6 +38,7 @@ const BannerCarousel = () => {
               height={720}
               priority
               quality={80}
+              className="w-full aspect-video object-cover"
             />
           </div>
         ))}

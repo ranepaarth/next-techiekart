@@ -27,7 +27,7 @@ const ProductsFeed = () => {
   }
 
   return (
-    <section className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:-mt-20 lg:-mt-32 xl:-mt-52 grid-flow-row-dense mx-auto">
+    <section className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:-mt-28 lg:-mt-56 xl:-mt-72 grid-flow-row-dense mx-auto">
       {data?.slice(0, 4).map((product) => (
         <Product product={product} key={product.id} />
       ))}
